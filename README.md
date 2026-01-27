@@ -359,5 +359,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <p align="center">
   <b>⭐ Star this repository if you find it useful! ⭐</b>
 </p>
-#   g r a p h 2 t e x t - r e t r i e v a l - p i p e l i n e  
- 
+#
