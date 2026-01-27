@@ -4,7 +4,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **A novel retrieval-augmented approach for generating accurate textual descriptions from molecular graphs, achieving BLEU-4 + BERTScore = 0.69 on validation data.**
+> **A novel retrieval-augmented approach for generating accurate textual descriptions from molecular graphs, achieving 0.5 * BLEU-4 + 0.5 * BERTScore = 0.69 on validation data.**
 
 ---
 
@@ -327,4 +327,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <b>⭐ Star this repository if you find it useful! ⭐</b>
 </p>
 #
+
 
