@@ -42,7 +42,7 @@ This approach ensures high-quality, factually grounded descriptions by retrievin
 
 | Metric | Validation Score |
 |--------|------------------|
-| **BLEU-4 + BERTScore** | **0.69** |
+| 0.5 * (**BLEU-4 + BERTScore**) | **0.69** |
 | Best Dense Top-K | 256 |
 | Best Alpha (Dense vs FP) | 0.8 |
 | Text Re-rank Weight | 0.3 |
@@ -327,5 +327,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <b>⭐ Star this repository if you find it useful! ⭐</b>
 </p>
 #
+
 
 
