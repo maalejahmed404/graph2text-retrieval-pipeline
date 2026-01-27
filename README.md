@@ -49,31 +49,6 @@ This approach ensures high-quality, factually grounded descriptions by retrievin
 
 The hybrid approach significantly outperforms single-modality retrieval methods by leveraging complementary signals from learned representations and chemical structure.
 
----
-
-## 💡 Why This Approach Matters
-
-### The Challenge
-Generating accurate descriptions for molecules is critical for:
-- **Drug Discovery**: Understanding molecular properties and mechanisms
-- **Chemical Documentation**: Automated annotation of compound databases
-- **Scientific Communication**: Making complex structures accessible
-
-### Limitations of Pure Generation
-Standard sequence-to-sequence or language model approaches often:
-- ❌ Hallucinate facts not grounded in the molecular structure
-- ❌ Miss critical functional groups or stereochemistry
-- ❌ Require massive training data to generalize
-
-### Our Solution: Retrieval-Augmented Generation
-By retrieving descriptions from verified molecule-caption pairs, we:
-- ✅ **Guarantee factual accuracy** - descriptions come from validated sources
-- ✅ **Leverage domain knowledge** - training pool encodes chemical expertise
-- ✅ **Handle rare structures** - fingerprints capture structural similarity even for unseen molecules
-- ✅ **Scale efficiently** - no expensive generation at inference time
-
----
-
 ## 🏗️ Architecture
 
 The system operates in two distinct phases:
@@ -105,6 +80,7 @@ The system operates in two distinct phases:
 │              Minimize similarity for non-matching pairs                     │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
+<img width="940" height="576" alt="image" src="https://github.com/user-attachments/assets/92e8caa5-6aaa-4eae-8b8a-208de2265dbf" />
 
 ### Inference Phase (Multi-Stage Retrieval)
 ```
@@ -150,6 +126,7 @@ The system operates in two distinct phases:
 │                     └─────────────────┘                                    │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
+<img width="1066" height="554" alt="image" src="https://github.com/user-attachments/assets/305c13b5-7d8f-4232-962a-dd055d1fc818" />
 
 ---
 
@@ -163,6 +140,8 @@ The system operates in two distinct phases:
 
 ### Stage 2: Fingerprint Similarity
 - **Method**: Morgan (circular) fingerprints with radius=2
+- **Morgan (circular) fingerprints (radius = 2)**  
+For each atom, Morgan fingerprints enumerate its local neighborhood up to **2 bonds away** (radius 2). Each neighborhood pattern is hashed into indices of the fingerprint vector, producing a compact signature of the molecule’s **local motifs** (rings, functional groups, atom environments).
 - **Similarity**: Tanimoto coefficient for structural comparison
 - **Advantage**: Captures chemical substructure patterns independently of learned representations
 
@@ -320,25 +299,13 @@ While developed for molecular captioning, this hybrid retrieval framework is **d
 | Dense only | 0.612 |
 | Fingerprint only | 0.589 |
 | Dense + FP (no RRF) | 0.651 |
-| Dense + FP + RRF | 0.672 |
+| Dense + FP + RRF | 0.685 |
 | **Full (+ Text Re-rank)** | **0.690** |
 
 The text re-ranking stage provides a significant boost by leveraging the cross-modal alignment learned during training.
+**Morgan (circular) fingerprints (radius = 2)**  
+For each atom, Morgan fingerprints enumerate its local neighborhood up to **2 bonds away** (radius 2). Each neighborhood pattern is hashed into indices of the fingerprint vector, producing a compact signature of the molecule’s **local motifs** (rings, functional groups, atom environments).
 
----
-
-## 📚 Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-@software{hybrid_graph2text_retrieval,
-  title={Hybrid Retrieval for Graph-to-Text Generation},
-  author={Your Name},
-  year={2026},
-  url={https://github.com/yourusername/graph2text-retrieval}
-}
-```
 
 ---
 
@@ -360,3 +327,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <b>⭐ Star this repository if you find it useful! ⭐</b>
 </p>
 #
+
