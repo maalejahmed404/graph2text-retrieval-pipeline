@@ -179,7 +179,7 @@ pip install torch torch_geometric transformers rdkit-pypi pandas numpy tqdm
 ### Clone Repository
 ```bash
 git clone https://github.com/maalejahmed404/graph2text-retrieval-pipeline.git
-cd graph2text-retrieval
+cd graph2text-retrieval-pipeline
 ```
 
 ---
@@ -327,6 +327,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <b>⭐ Star this repository if you find it useful! ⭐</b>
 </p>
 #
+
 
 
 
